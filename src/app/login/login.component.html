@@ -1,0 +1,47 @@
+<div class="row mt-5">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+    <form #formRef="ngForm" class="form" (ngSubmit)="formRef.form.valid&&onSubmit(formRef)">
+
+      <!-- radio buttons for user and admin -->
+      <div class="text-center">
+        <div class="form-check form-switch form-check-inline">
+          <input class="form-check-input " type="radio" id="user" name="usertype" value="user" ngModel>
+          <label class="form-check-label " for="user" >User</label>
+        </div>
+        <div class="form-check form-switch form-check-inline">
+          <input class="form-check-input " type="radio" id="admin" name="usertype" value="admin" ngModel>
+          <label class="form-check-label " for="admin">Admin</label>
+        </div>
+      </div>
+
+
+
+      <div class="form-floating mb-3 ">
+        <input type="text" class="form-control" id="username" placeholder="Username" name="username" #username="ngModel"
+          ngModel required>
+        <label for="username">Username</label>
+      </div>
+      <!-- validation for username-->
+      <p *ngIf="(username.touched || formRef.submitted)&&username.errors?.required" class="text-danger">Username
+        required</p>
+
+      <div class="form-floating mb-3 ">
+        <input type="password" class="form-control" id="password" placeholder="Password" name="password"
+          #password="ngModel" ngModel required>
+        <label for="password">Password</label>
+      </div>
+      <!-- validation for password-->
+      <p *ngIf="(password.touched || formRef.submitted)&&password.errors?.required" class="text-danger">Password
+        required</p>
+
+
+
+
+
+      <button type="submit" class="btn btn-primary d-block mx-auto">Login</button>
+
+    </form>
+  </div>
+  <div class="col-sm-2"></div>
+</div>

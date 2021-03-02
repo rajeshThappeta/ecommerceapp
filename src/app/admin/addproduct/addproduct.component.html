@@ -1,0 +1,68 @@
+<div class="container">
+
+    <div class="row mt-5">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <form #formRef="ngForm" class="form" (ngSubmit)="formRef.form.valid&&onSubmit(formRef)">
+
+                <!-- product id -->
+                <div class="form-floating mb-3 ">
+                    <input type="number" class="form-control " id="email" placeholder="product ID" name="productid"
+                        ngModel #productid="ngModel" required>
+                    <label for="email">Product ID</label>
+                </div>
+                <!-- validation for productid-->
+                <p *ngIf="(productid.touched || formRef.submitted)&&productid.errors?.required" class="text-danger">
+                    Email required</p>
+
+                <!-- product name -->
+                <div class="form-floating mb-3 ">
+                    <input type="text" class="form-control" id="username" placeholder="Product name" name="productname"
+                        #productname="ngModel" ngModel required>
+                    <label for="username">Product name</label>
+                </div>
+                <!-- validation for productname-->
+                <p *ngIf="(productname.touched || formRef.submitted)&&productname.errors?.required" class="text-danger">
+                    Username required</p>
+
+                <!-- product price -->
+                <div class="form-floating mb-3 ">
+                    <input type="number" class="form-control" id="password" placeholder="Product price"
+                        name="productprice" #productprice="ngModel" ngModel required>
+                    <label for="password">Product price</label>
+                </div>
+                <!-- validation for productprice-->
+                <p *ngIf="(productprice.touched || formRef.submitted)&&productprice.errors?.required"
+                    class="text-danger">Password required</p>
+
+
+                <!-- product description -->
+                <div class="form-floating">
+                    <textarea class="form-control mb-3" placeholder="Write product description"
+                        name="productdescription" id="productdescription" style="height: 100px" ngModel
+                        #productdescription="ngModel"></textarea>
+                    <label for="productdescription">Product description</label>
+                </div>
+
+                <!-- validation for productdescription-->
+                <p *ngIf="(productdescription.touched || formRef.submitted)&&productdescription.errors?.required"
+                    class="text-danger">Product description required</p>
+
+
+                <!-- image select -->
+                <input type="file" class="form-control mb-3" (change)="incomingfile($event)" name="photo"
+                    accept='image/*' placeholder="Upload file" #photo="ngModel" ngModel required>
+
+                <!-- validation for image-->
+                <p *ngIf="(photo.touched || formRef.submitted)&&photo.errors?.required" class="text-danger">Select
+                    product image</p>
+
+                <button type="submit" class="btn btn-primary d-block mx-auto">Add product</button>
+
+            </form>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+
+
+</div>

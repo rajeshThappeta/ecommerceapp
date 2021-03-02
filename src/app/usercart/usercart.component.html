@@ -1,0 +1,14 @@
+<div class="table-responsive">
+    <table class="table table-striped table-hover text-center">
+        <thead>
+            <th>Productname</th>
+            <th>Price</th>
+            <th>Description</th>
+        </thead>
+        <tr *ngFor="let item of cart">
+            <td>{{item.product.productname}}</td>
+            <td>{{item.product.productprice}}</td>
+            <td>{{item.product.productdescription}}</td>
+        </tr>
+    </table>
+</div>

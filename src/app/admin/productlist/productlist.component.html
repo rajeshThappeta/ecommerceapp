@@ -1,0 +1,28 @@
+<h3 *ngIf="productsStatus" class="text-center text-secondary mt-5">No products in the list</h3>
+
+<div *ngIf="!productsStatus" class="table-responsive">
+    <table class="table text-center">
+        <thead>
+            <tr>
+                <th>ProductID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+
+                <th>{{product.productid}}</th>
+                <td>{{product.productname}}</td>
+                <td>{{product.productprice}}</td>
+                <td>{{product.productdescription}}</td>
+                <td>
+                    <img src={{product.productimage}} alt="" class="d-block mx-auto image">
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

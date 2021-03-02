@@ -1,0 +1,22 @@
+
+
+ @media (min-width:300px){
+    .image{
+        width:100px;
+    }
+}
+/*
+@media (max-width:499px){
+    .image{
+      width:  120px;
+    }
+}
+@media (max-width:399px){
+    .image{
+      width:  130px;
+    }
+} */
+
+div{
+    font-family: 'Roboto', sans-serif;
+}

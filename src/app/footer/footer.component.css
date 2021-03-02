@@ -1,0 +1,14 @@
+div{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+  
+    line-height: 60px;
+  }

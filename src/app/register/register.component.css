@@ -1,0 +1,13 @@
+.form-control{
+    border: none;
+    border-bottom: solid 1px black;
+    background-color: transparent;
+    outline: none;
+    box-shadow:none !important;
+    border-radius: 0;
+
+}
+
+div{
+    font-family: 'Roboto', sans-serif;
+}

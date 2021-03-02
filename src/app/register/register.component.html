@@ -1,0 +1,37 @@
+<div class="row mt-5">
+<div class="col-sm-2"></div>
+<div class="col-sm-8">
+  <form  #formRef="ngForm" class="form" (ngSubmit)="formRef.form.valid&&onSubmit(formRef)">
+
+    <div class="form-floating mb-3 ">
+      <input type="email" class="form-control " id="email" placeholder="name@example.com"  name="email" ngModel #email="ngModel" required>
+      <label for="email">Email address</label>
+    </div>
+    <!-- validation for email-->
+    <p *ngIf="(email.touched || formRef.submitted)&&email.errors?.required" class="text-danger">Email required</p>
+
+    <div class="form-floating mb-3 ">
+      <input type="text" class="form-control" id="username" placeholder="Username" name="username" #username="ngModel" ngModel required>
+      <label for="username">Username</label>
+    </div>
+    <!-- validation for email-->
+    <p *ngIf="(username.touched || formRef.submitted)&&username.errors?.required" class="text-danger">Username required</p>
+
+    <div class="form-floating mb-3 ">
+      <input type="password" class="form-control" id="password" placeholder="Password" name="password" #password="ngModel" ngModel required>
+      <label for="password">Password</label>
+    </div>
+  <!-- validation for email-->
+    <p *ngIf="(password.touched || formRef.submitted)&&password.errors?.required" class="text-danger">Password required</p>
+  
+  
+  
+    
+    
+      <button type="submit" class="btn btn-primary d-block mx-auto">Register</button>
+   
+  </form>
+</div>
+<div class="col-sm-2"></div>
+</div>
+

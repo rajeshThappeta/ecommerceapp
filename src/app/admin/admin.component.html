@@ -1,0 +1,18 @@
+<button class="btn btn-outline-danger float-end mt-2" (click)="logout()">Logout</button>
+<div class="row">
+    <div class="col-sm-3">
+        <ul class="nav flex-column">
+            <li class="nav-item"> 
+                <a routerLink="addproduct" class="nav-link">Add new product</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="productlist" class="nav-link">Products List</a>
+            </li>
+        </ul>
+
+
+    </div>
+    <div class="col-sm-9">
+        <router-outlet></router-outlet>
+    </div>
+</div>

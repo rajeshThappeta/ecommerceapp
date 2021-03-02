@@ -1,0 +1,20 @@
+<div class="container mt-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col" *ngFor="let product of products">
+
+            <div class="card h-100 bg-light">
+                <img src={{product.productimage}} class="card-img-top  p-3" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.productname | titlecase }}</h5>
+                    <h5 class="card-title">{{product.productprice }}</h5>
+                    <p class="card-text">{{product.productdescription}}</p>
+                </div>
+                <button class="btn btn-info m-2" (click)="gotoViewProduct(product.productid)">View</button>
+                <button class="btn btn-primary float-right m-2"  (click)="addToCart(product)">Add to cart</button>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
