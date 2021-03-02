@@ -42,14 +42,14 @@ export class UserService {
 
 
   cartsize=0;
-  private profileObs$: BehaviorSubject<any> = new BehaviorSubject(this.cartsize);
+  private cartSubject: BehaviorSubject<any> = new BehaviorSubject(this.cartsize);
 
-    getProfileObs(): Observable<any> {
-        return this.profileObs$.asObservable();
+    getCartSubjectSize(): Observable<any> {
+        return this.cartSubject.asObservable();
     }
 
-    setProfileObs(cartsize: any) {
-        this.profileObs$.next(cartsize);
+    setCartSubjectSize(cartsize: any) {
+        this.cartSubject.next(cartsize);
     }
 
 

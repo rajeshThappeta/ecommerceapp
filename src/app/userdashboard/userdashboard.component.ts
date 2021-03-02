@@ -25,10 +25,10 @@ export class UserdashboardComponent implements OnInit {
     this.userService.getInitialCartSize( JSON.parse(localStorage.getItem("user"))["username"]).subscribe(
       res=>{
 
-        this.userService.setProfileObs(res["cartsize"])
+        this.userService.setCartSubjectSize(res["cartsize"])
         this.userCartSize=res["cartsize"]
 
-      this.userService.getProfileObs().subscribe(c=>{
+      this.userService.getCartSubjectSize().subscribe(c=>{
         this.userCartSize=c;
       })
     

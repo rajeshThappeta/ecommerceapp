@@ -56,7 +56,7 @@ export class HomeComponent implements OnInit {
     
         console.log("res in home ",res)
         //inform about cartsize to user service
-        this.userService.setProfileObs(res["cartsize"])
+        this.userService.setCartSubjectSize(res["cartsize"])
 
 
         // this.userService.setCartSize(res["cartsize"])

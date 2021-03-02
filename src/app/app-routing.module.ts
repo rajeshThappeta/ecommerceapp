@@ -14,7 +14,7 @@ const routes: Routes = [
   {path:"login",component:LoginComponent},
   {path:"viewproduct/:productid",component:ViewproductComponent},
   {path:"userdashboard/:username",component:UserdashboardComponent},
- // {path:"usercart",component:UsercartComponent},
+  {path:"usercart",component:UsercartComponent},
   {path:"",redirectTo:"home",pathMatch:"full"},
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) }
 ];
