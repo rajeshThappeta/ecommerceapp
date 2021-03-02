@@ -53,12 +53,17 @@ export class HomeComponent implements OnInit {
     this.cartService.addToCart(selectedProduct).subscribe(
       res=>{
         alert(res["message"])
-      //  this.userService.updateMessage(res["cartsize"])
-        this.userService.setCartSize(res["cartsize"])
-        let cartsize=localStorage.getItem("cartsize")
+    
+        console.log("res in home ",res)
+        //inform about cartsize to user service
+        this.userService.setProfileObs(res["cartsize"])
+
+
+        // this.userService.setCartSize(res["cartsize"])
+        // let cartsize=localStorage.getItem("cartsize")
       
-        cartsize=res["cartsize"]
-        localStorage.setItem("cartsize",cartsize)
+        // cartsize=res["cartsize"]
+        // localStorage.setItem("cartsize",cartsize)
         this.router.navigateByUrl(`/userdashboard/${username}`)
       },
       err=>{

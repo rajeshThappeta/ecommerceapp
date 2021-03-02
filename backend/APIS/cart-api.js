@@ -11,10 +11,11 @@ cartApiObj.post("/add", errorHandler(async (req, res, next) => {
 
     //search whether this item is already added or not
     let product = await Cart.findOne({ "product.productid": req.body.product.productid ,username:req.body.username})
-    console.log("product is ", product)
+    
     if (product != null) {
-        let userCartSize = await (await Cart.find({ productid: req.body.product.productid })).length;
-        res.send({ message: "Product already added to your cart", cartsize: userCartSize })
+        let userCart = await Cart.find({ username:req.body.username});
+        console.log("usercart ",userCart)
+        res.send({ message: "Product already added to your cart", cartsize: userCart.length })
     }
 
     else {
@@ -25,10 +26,10 @@ cartApiObj.post("/add", errorHandler(async (req, res, next) => {
 
         await cartItem.save()
 
-        let userCartSize = await (await Cart.find({ username: req.body.username })).length;
+        let userCart = await Cart.find({  username:req.body.username});
 
 
-        res.send({ message: "Product added to cart succuessfully", cartsize: userCartSize })
+        res.send({ message: "Product added to cart succuessfully", cartsize: userCart.length })
     }
 }))
 

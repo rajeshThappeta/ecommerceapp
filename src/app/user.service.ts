@@ -41,14 +41,16 @@ export class UserService {
   }
 
 
-  // public messageStream = new BehaviorSubject<number>((+localStorage.getItem("cartsize")));
-  // currentMessage = this.messageStream.asObservable()
-  
- 
-  // updateMessage(newMessage: number){
-  //   this.messageStream.next(newMessage);
- 
-  // }
+  cartsize=0;
+  private profileObs$: BehaviorSubject<any> = new BehaviorSubject(this.cartsize);
+
+    getProfileObs(): Observable<any> {
+        return this.profileObs$.asObservable();
+    }
+
+    setProfileObs(cartsize: any) {
+        this.profileObs$.next(cartsize);
+    }
 
 
 }
